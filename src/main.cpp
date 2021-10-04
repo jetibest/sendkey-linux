@@ -15,12 +15,7 @@
 #include <map>
 #include <deque>
 
-#include "config.h"
-#include "overseer.h"
-#include "cleaner.h"
-#include "keyboard.h"
-#include "eventqueue.h"
-#include "stdinparser.h"
+#include "main.h"
 
 using namespace std;
 
@@ -42,7 +37,7 @@ int main(int argc, char **argv)
 	
 	signal(SIGINT, stop);
 	
-	++running; // stdinparser_reader
+    ++running; // stdinparser_reader
 	
 	if(keyboard_create())
 	{

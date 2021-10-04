@@ -25,6 +25,9 @@
 
 using namespace std;
 
+// not good to use this, since the actual key depends on the keyboard-layout
+// set layout on Xorg system like: setxkbmap -device "$(xinput -list | grep 'sendkey virtual-keyboard' | sed -r -e '/sendkey virtual-keyboard/!d' -e 's/^.*id=([0-9]+).*$/\1/g')" -layout <layout>
+// where <layout> is for instance "us" or "dvorak", etc.
 static map<string, unsigned char> scankeymap = {
 	{"CTRL", HID_KEY_LEFTCTRL},
 	{"SHIFT", HID_KEY_LEFTSHIFT},
@@ -66,7 +69,21 @@ static map<string, unsigned char> scankeymap = {
 	{"W", HID_KEY_W},
 	{"X", HID_KEY_X},
 	{"Y", HID_KEY_Y},
-	{"Z", HID_KEY_Z}
+	{"Z", HID_KEY_Z},
+    {"1", HID_KEY_1},
+    {"2", HID_KEY_2},
+    {"3", HID_KEY_3},
+    {"4", HID_KEY_4},
+    {"5", HID_KEY_5},
+    {"6", HID_KEY_6},
+    {"7", HID_KEY_7},
+    {"8", HID_KEY_8},
+    {"9", HID_KEY_9},
+    {"0", HID_KEY_0},
+    {"ENTER", HID_KEY_ENTER},
+    {"ESC", HID_KEY_ESC},
+    {"BACKSPACE", HID_KEY_BACKSPACE},
+    {"TAB", HID_KEY_TAB}
 };
 
 void parse_keyword(string ln);
